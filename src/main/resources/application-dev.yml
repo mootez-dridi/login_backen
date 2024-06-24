@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/reservation
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: mootez
+    password: mootez
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectionTimeout: 5000
+        timeout: 3000
+        writeTimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: OcYsf9ZOhRXUZVJ3FehR0Gz0w2MaUJ9sYUnwUpFXg5A=
+      expiration: 8640000
+
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+server:
+  port: 8088
